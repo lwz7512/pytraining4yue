@@ -1,0 +1,1 @@
+# https://thispointer.com/python-reverse-a-list-sub-list-or-list-of-list-in-place-or-copy/
