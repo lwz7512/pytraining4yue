@@ -18,5 +18,8 @@ tiny python examples for absolute beginners
 - [13-reverse-number](./13-reverse-number.py)
 - [14-password-gen](./14-password-gen.py)
 - [15-send-email.py](./15-send-email.py)
+- [16-read-email.py](./16-read-email.py)
+- [17-check_leap_year.py](./17-check_leap_year.py)
+- [18-find-treasure.py](./18-find-treasure.py)
 - [21-read-write-csv](./21-read-write-csv.py)
 - [31-interview-algorithms](./31-interview-algorithms.py)
