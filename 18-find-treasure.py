@@ -18,7 +18,7 @@ def recur_factorial(n):
   else:
     return n*recur_factorial(n-1)
 
-num = 7
+num = 3
 
 # check if the number is negative
 # if num < 0:
@@ -165,7 +165,7 @@ def traverseTree_1(node):
   for key in node:
     print('====>> THEKEY: ' + key)
     print('-----------------------')
-    print(node[key])
+    # print(node[key])
 
 # traverseTree_1(amazing_fruit_tree)
 
@@ -185,7 +185,7 @@ def traverseTree_3(node):
     if(type(sub_node) == dict):
       traverseTree_3(sub_node)  # recursive loop !!!
 
-traverseTree_3(amazing_fruit_tree)
+# traverseTree_3(amazing_fruit_tree)
 
 # ---------- step 4: check the color, and the treasure type
 def traverseTree_4(node):
@@ -239,7 +239,8 @@ def traverseTree_7(node, box):
     if(type(node) != dict):
       continue
     sub_node = node[key]
-    traverseTree_7(sub_node, box)
+    if (type(sub_node) == dict):
+      traverseTree_7(sub_node, box)
   return box
 
 # total_red_diamond = traverseTree_7(amazing_fruit_tree, [])
