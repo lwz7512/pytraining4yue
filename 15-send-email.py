@@ -56,6 +56,6 @@ def test_qqmail_open():
 # test
 # test_qqmail_open()
 
-# call funtion
+# call function
 sendEmailBy(my_email, auth_code, my_email, to_emails, message)
 
