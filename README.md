@@ -38,7 +38,7 @@ tiny python examples for absolute beginners
 - [NASA Image Downloader](./50-nasa-image-download.py)
 - [City Weather Forecasting](./53-city-weather-forecast.py)
 - [Reading Hot News](./59-fetch-news.py)
-- [Lyic Downloader](./43-lyric-downloader.py)
+- [Lyric Downloader](./43-lyric-downloader.py)
 - [Tic Tac Toe](./56-tic-tac-toe.py)
 - [Drawing Snow Flake](./57-koch-curve.py)
 - [Hand Writing Pad](./58-draw-with-pen.py)
