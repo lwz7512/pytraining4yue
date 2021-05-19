@@ -1,6 +1,8 @@
 tiny python examples for absolute beginners
 -------------------
 
+## General code samples:
+
 @2021/04/11
 
 - [1-sumof-100nums](./1-sumof-100nums.py)
@@ -23,3 +25,30 @@ tiny python examples for absolute beginners
 - [18-find-treasure.py](./18-find-treasure.py)
 - [21-read-write-csv](./21-read-write-csv.py)
 - [31-interview-algorithms](./31-interview-algorithms.py)
+
+
+## Interesting Python Apps For Teenagers:
+
+@2021/05/19
+
+
+- [Stone Scissor Paper](./54-stone-scissor-paper.py)
+- [Guess Number](./55-guess-number.py)
+- [Searching Treasure](./18-find-treasure.py)
+- [Send Email](./15-send-email.py)
+- [Todo List](./41-todo-list.py)
+- [Music Player](./44-music-player.py)
+- [NASA Image Downloader](./50-nasa-image-download.py)
+- [City Weather Forecasting](./53-city-weather-forecast.py)
+- [Reading Hot News](./59-fetch-news.py)
+- [Lyic Downloader](./43-lyric-downloader.py)
+- [Tic Tac Toe](./56-tic-tac-toe.py)
+- [Drawing Snow Flake](./57-koch-curve.py)
+- [Hand Writing Pad](./58-draw-with-pen.py)
+- [Space Fight](./59-sprite-bullets-enemies.py)
+- [Stock Trending Plot](./60-stock-trending-drawing-matplot.py)
+- [File Uploader](./61-file-uploader.py)
+- [Local Gallery](./62-local-gallery.py)
+- [Console Chating](./63-console-chat.py)
+- [Twitter Bot](./64-twitter-bot.py)
+- [System Performance Inspector](./65-sys-perform-inspect.py)

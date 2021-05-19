@@ -63,6 +63,13 @@ print('Last Element: ', last_elem)
 
 
 
+### remove all elements:
+
+list_of_num = [1, 2, 3, 4]
+list_of_num.clear()
+# or use del:
+# del list_of_num[:]
+
 ####  Python: Remove last element from a list in 3 ways:
 
 # 1. Remove the last element from a list in Python using the pop() function
