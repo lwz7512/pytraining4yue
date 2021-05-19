@@ -46,6 +46,6 @@ tiny python examples for absolute beginners
 - [Stock Trending Plot](./60-stock-trending-drawing-matplot.py)
 - [File Uploader](./61-file-uploader.py)
 - [Local Gallery](./62-local-gallery.py)
-- [Console Chating](./63-console-chat.py)
+- [Console Chatting](./63-console-chat.py)
 - [Twitter Bot](./64-twitter-bot.py)
 - [System Performance Inspector](./65-sys-perform-inspect.py)
