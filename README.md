@@ -27,10 +27,7 @@ tiny python examples for absolute beginners
 - [31-interview-algorithms](./31-interview-algorithms.py)
 
 
-## Interesting Python Apps For Teenagers:
-
-@2021/05/19
-
+## Interesting Python Apps For Teenagers (2021/05/19):
 
 - [Stone Scissor Paper](./54-stone-scissor-paper.py)
 - [Guess Number](./55-guess-number.py)
