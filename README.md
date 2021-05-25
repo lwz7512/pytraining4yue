@@ -1,3 +1,5 @@
+![hero-image](./image/lets_ph_ninjia.jpg)
+
 tiny python examples for absolute beginners
 -------------------
 
