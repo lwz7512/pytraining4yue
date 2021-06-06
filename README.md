@@ -21,8 +21,6 @@ tiny python examples for absolute beginners
 - [12-credit-card](./12-credit-card.py)
 - [13-reverse-number](./13-reverse-number.py)
 - [14-password-gen](./14-password-gen.py)
-- [15-send-email.py](./15-send-email.py)
-- [16-read-email.py](./16-read-email.py)
 - [17-check_leap_year.py](./17-check_leap_year.py)
 - [18-find-treasure.py](./18-find-treasure.py)
 - [21-read-write-csv](./21-read-write-csv.py)
@@ -30,6 +28,12 @@ tiny python examples for absolute beginners
 
 
 ## Interesting Python Apps For Teenagers:
+
+To run these applications, install modules by:
+
+```
+pip3 installl ...
+```
 
 - [Stone Scissor Paper](./54-stone-scissor-paper.py)
 - [Guess Number](./55-guess-number.py)
@@ -44,10 +48,10 @@ tiny python examples for absolute beginners
 - [Tic Tac Toe](./56-tic-tac-toe.py)
 - [Drawing Snow Flake](./57-koch-curve.py)
 - [Hand Writing Pad](./58-draw-with-pen.py)
-- [Space Fight](./59-sprite-bullets-enemies.py)
-- [Stock Trending Plot](./60-stock-trending-drawing-matplot.py)
+- [Space Fight](./66-sprite-bullets-enemies.py)
+- [Stock Trending Plot](./60-stock-trending-chart.py)
 - [File Uploader](./61-file-uploader.py)
 - [Local Gallery](./62-local-gallery.py)
 - [Console Chatting](./63-console-chat.py)
-- [Twitter Bot](./64-twitter-bot.py)
+- [Chatter Bot](./64-chatter-bot.py)
 - [System Performance Inspector](./65-sys-perform-inspect.py)
