@@ -41,3 +41,17 @@ class JsonParser:
         """
         data_dic = self.convert_json_to_python(par_json_file)
         return data_dic[par_value]
+
+    def json_str_to_file(self, json_str, json_file):
+        """
+        write json string to a json file
+        """
+        data_dicts = json.loads(json_str)
+        with open(json_file, 'w') as outfile:
+            json.dump(data_dicts, outfile, indent = 4, sort_keys=True)
+    
+    def parse(self, json_str):
+        """
+        parse string to json dict
+        """
+        return json.loads(json_str)
