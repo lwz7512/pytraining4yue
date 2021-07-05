@@ -59,7 +59,7 @@ plt.subplots(1, 1, figsize=(16, 4))
 
 import requests
 
-RAPIDAPI_KEY  = "f485d68c54msheb2801d8c5166e7p14a601jsnf8378d101955"
+RAPIDAPI_KEY  = "???"
 RAPIDAPI_HOST = "apidojo-yahoo-finance-v1.p.rapidapi.com"
 
 def fetchStockDataFor(symbol):
