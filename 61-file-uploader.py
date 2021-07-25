@@ -38,14 +38,14 @@
 import contextlib
 import datetime
 import os
-import six
-import sys
+# import six
+# import sys
 import time
 import unicodedata
 
 import dropbox
 
-token = 'sl.A07FQcqPYzOBe_zmSYKfIITUE3nxWMtqVdYFfokIEJvpDOeoZnqEv7fPKd9xgyfEM7d1gzpdqLYpt98E5qXa49r6Ur6u4nhb19qLZZo2hNlCd6XgO7PWJIBP1yj1C2_Urh0VqwPi'
+token = 'sl.xxxxxxx...'
 dbx = dropbox.Dropbox(token)
 # account = dbx.users_get_current_account()
 # print(account)
