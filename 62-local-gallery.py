@@ -21,9 +21,22 @@
 # export FLASK_ENV=development
 # python3 -m flask run
 
+# env setup for windows:
+# SET FLASK_APP=62-local-gallery
+# SET FLASK_ENV=development
+# echo %FLASK_APP%
+
 # visit gallery:
 # http://localhost:5000/gallery
 
+# in tornado:
+# question 1: how to host static files(images)?
+# question 2: how to use html template to display html content?
+# question 3: how to inject/pass data or parameters into templete?
+# doing experiment for each question, then integrate theme together.
+
+# last step:
+# migrate this application into tornado!
 
 import os
 from os import listdir
@@ -68,6 +81,7 @@ def generateThumbnails(images):
     for img in images:
         print('>>> generate: {0}'.format(img))
         sourceImgPath = join(pictures_dir, img)
+        print('>>> full image path: {0}'.format(sourceImgPath))
         thumbnailPath = join(temp_dir, img)
         tnails(sourceImgPath, thumbnailPath, (120,90))
     print('>>>> thumbnails generation done!')

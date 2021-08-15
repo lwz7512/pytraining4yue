@@ -32,7 +32,7 @@ tiny python examples for absolute beginners
 To run these applications, install modules by:
 
 ```
-pip3 installl ...
+pip3 install ...
 ```
 
 - [Stone Scissor Paper](./54-stone-scissor-paper.py)

@@ -1,0 +1,14 @@
+<html>
+   <head>
+      <title>{{ title }}</title>
+   </head>
+   <body>
+     <div>
+       {% for item in items %}
+          <a href="/image_raw/{{ escape(item) }}" style="display: inline-block;">
+            <img src="/thumbnails/{{ escape(item) }}" style="padding: 10px;width: 100px; height: 100px;"/>
+          </a>
+       {% end %}
+     </div>
+   </body>
+ </html>
