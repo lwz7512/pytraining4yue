@@ -1,4 +1,13 @@
+# TODO: Drawing computer status with urwid
+# http://urwid.org/
 
+# and collecting data with:
+# https://psutil.readthedocs.io/en/latest/
+# https://github.com/giampaolo/psutil
+
+# Reference:
+# https://www.thepythoncode.com/article/get-hardware-system-information-python
+# https://www.thepythoncode.com/code/make-process-monitor-python
 
 
 ## Step 1 : get some system status info like % top
@@ -17,7 +26,6 @@ import os
 import psutil
 import platform
 from datetime import datetime
-
 
 
 # def get_size(bytes, suffix="B"):
@@ -60,7 +68,7 @@ from datetime import datetime
 # print(f"Min Frequency: {cpufreq.min:.2f}Mhz")
 # print(f"Current Frequency: {cpufreq.current:.2f}Mhz")
 
-# CPU usage
+# ==========  CPU usage by percpu ===================
 # print("CPU Usage Per Core:")
 # for i, percentage in enumerate(psutil.cpu_percent(percpu=True, interval=1)):
 #     print(f"Core {i}: {percentage}%")
@@ -120,20 +128,9 @@ from datetime import datetime
 #     print(f"  Used: {get_size(partition_usage.used)}")
 #     print(f"  Free: {get_size(partition_usage.free)}")
 #     print(f"  Percentage: {partition_usage.percent}%")
+
 # # get IO statistics since boot
 # disk_io = psutil.disk_io_counters()
-# TODO: Drawing computer status with urwid
-# http://urwid.org/
-
-# and collecting data with:
-# https://psutil.readthedocs.io/en/latest/
-# https://github.com/giampaolo/psutil
-
-# Reference:
-# https://www.thepythoncode.com/article/get-hardware-system-information-python
-# https://www.thepythoncode.com/code/make-process-monitor-python
-
-
 
 # using top command in MacOS:
 # % top -l3 -n10 > library/top_data.txt
@@ -169,9 +166,86 @@ from datetime import datetime
 # print(f"Total Bytes Sent: {get_size(net_io.bytes_sent)}")
 # print(f"Total Bytes Received: {get_size(net_io.bytes_recv)}")
 
+import urwid
 
-# ==========  Process list  =================
 
-# for proc in psutil.process_iter(['pid', 'name', 'username']):
-#   print(proc.info)
+CPU_COUNT = os.cpu_count()
+EXIT_FLAG = False
+CPU_USAGE_DATA = [[0, 0]] * CPU_COUNT
+UPDATE_INTERVAL = 0.2
+LABELS = []
 
+for i in range(0, CPU_COUNT):
+  label = urwid.Text(u"Core"+str(i), align='center')
+  box = urwid.LineBox(label)
+  LABELS.append(box)
+
+
+def cpu_checker():
+  if EXIT_FLAG:
+    return
+  percents = psutil.cpu_percent(percpu=True, interval=1)
+  CPU_USAGE_DATA.clear()
+  for i, percentage in enumerate(percents):
+    if i & 1:
+      CPU_USAGE_DATA.append([0, percentage])
+    else:
+      CPU_USAGE_DATA.append([percentage, 0])
+
+
+def quit(*args, **kwargs):
+  raise urwid.ExitMainLoop()
+
+def handle_key(key):
+  if key in ('q', 'Q', 'enter'):
+    quit()
+
+def animate_graph(loop, graph):
+    """update the graph and schedule the next update"""
+    cpu_checker()
+    graph.set_data(CPU_USAGE_DATA, 100)
+    loop.set_alarm_in(UPDATE_INTERVAL, animate_graph, graph)
+
+def main():
+
+  palette = [
+    ('banner', 'black', 'light gray'),
+    ('bigtext', 'light green', 'black'),
+    
+    ('starting', 'white', ''),
+    ('starting_text', 'black', 'yellow'),
+    ('connected', 'black', 'dark green'),
+    ('connected_highlight', 'black', 'white'),
+    ('error', 'black', 'dark red'),
+
+    ('bg background','light gray', 'black'),
+    ('bg 1',         'black',      'dark blue', 'standout'),
+    ('bg 2',         'black',      'dark cyan', 'standout'),
+  ]
+
+
+  graph = urwid.BarGraph(['bg background','bg 1','bg 2'])
+  graph.set_data([[9.0, 0], [0, 29.0], [49.0, 0], [0, 69.0], [89.0, 0]], 100)
+  
+  colums = urwid.Columns(LABELS)
+
+  bottom_row = urwid.Filler(colums, 'bottom')
+  bottom_row = urwid.AttrMap(bottom_row, 'starting')
+  
+  pile = urwid.Pile([
+    graph,
+    ('fixed', 3, bottom_row),
+  ])
+
+  loop = urwid.MainLoop(
+    pile,
+    palette = palette,
+    handle_mouse = False,
+    unhandled_input = handle_key
+  )
+  loop.set_alarm_in(1, animate_graph, graph)
+  loop.run()
+
+
+if '__main__'==__name__:
+  main()

@@ -7,16 +7,6 @@
 import urwid
 from datetime import datetime as dt
 
-class SwitchingPadding(urwid.Padding):
-    def padding_values(self, size, focus):
-        maxcol = size[0]
-        width, ignore = self.original_widget.pack(size, focus=focus)
-        if maxcol > width:
-            self.align = "left"
-        else:
-            self.align = "right"
-        return urwid.Padding.padding_values(self, size, focus)
-
 
 palette = [
     ('banner', 'black', 'light gray'),
@@ -26,7 +16,7 @@ palette = [
 # font = urwid.HalfBlock5x4Font()
 font = urwid.Thin6x6Font()
 btxt = urwid.BigText("DIGITAL CLOCK", font)
-btxt_pd = SwitchingPadding(btxt, 'left', None)
+btxt_pd = urwid.Padding(btxt, width=None)
 btxt_style = urwid.AttrWrap(btxt_pd, 'bigtext')
 btxt_fill = urwid.Filler(btxt_style, 'bottom', None, 7)
 
